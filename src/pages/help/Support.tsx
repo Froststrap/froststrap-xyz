@@ -1,4 +1,4 @@
-import { Github, MessageCircle, Mail } from "lucide-react";
+import { MessageCircle, Mail } from "lucide-react";
 import { AnchorHeading, useAnchorScroll } from "@/components/AnchorHeading";
 
 const Support = () => {
@@ -35,7 +35,7 @@ const Support = () => {
           rel="noopener noreferrer"
           className="p-6 rounded-lg bg-card border border-border hover:border-primary/50 transition-colors no-underline"
         >
-          <Github className="w-8 h-8 text-primary mb-3" />
+          <Mail className="w-8 h-8 text-primary mb-3" />
           <h3 className="text-xl font-semibold mb-2">GitHub Issues</h3>
           <p className="text-muted-foreground">
             Report bugs, request features, or browse existing issues on our
