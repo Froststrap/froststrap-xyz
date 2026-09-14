@@ -6,7 +6,7 @@ const Troubleshooting = () => {
   return (
     <div className="prose prose-invert max-w-none">
       <AnchorHeading id="troubleshooting" level={1}>Troubleshooting</AnchorHeading>
-      
+
       <p className="text-lg text-muted-foreground mb-8">
         Solutions to common issues you might encounter with Froststrap.
       </p>
@@ -28,11 +28,11 @@ const Troubleshooting = () => {
         <div className="mt-6 p-6 rounded-lg bg-primary/10 border border-primary/20">
           <h2 className="text-2xl font-bold mb-3">Still Having Issues?</h2>
           <p className="text-muted-foreground mb-4">
-            If you've tried these solutions and are still experiencing problems, please visit our 
+            If you've tried these solutions and are still experiencing problems, please visit our
             support page to get help from the community or report a bug.
           </p>
           <a
-            href="/help/support"
+            href="/docs/help/support"
             className="text-primary hover:underline font-medium">
             Visit Support Page →
           </a>

@@ -53,6 +53,7 @@ const Support = () => {
         </p>
         <ul className="list-disc list-inside space-y-2 text-muted-foreground">
           <li>Your Froststrap version</li>
+          <li>Your operating system</li>
           <li>A detailed description of the issue</li>
           <li>Steps to reproduce the problem</li>
           <li>Any error messages you've encountered</li>
