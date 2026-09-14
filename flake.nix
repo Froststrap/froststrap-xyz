@@ -16,6 +16,7 @@
           packages = with pkgs; [
             nodejs_22
             bun
+            cloudflared
 
             typescript-language-server
             nil

@@ -22,7 +22,7 @@ import {
   FaWindows,
 } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/froststrap-logo.png";
+const logo = "/froststrap-logo.png";
 import formatCompactNumber from "@/lib/formatNumber";
 
 interface ReleaseData {

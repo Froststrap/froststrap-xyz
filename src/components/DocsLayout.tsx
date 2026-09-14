@@ -12,7 +12,8 @@ import { Input } from "@/components/ui/input";
 import { searchContent, SearchResult } from "@/lib/searchData";
 import { useTheme } from "@/components/ThemeProvider";
 import { TableOfContents } from "@/components/TableOfContents";
-import froststrap from "@/assets/froststrap-logo.png";
+const froststrap = "/froststrap-logo.png";
+
 interface NavItem {
   title: string;
   path?: string;
