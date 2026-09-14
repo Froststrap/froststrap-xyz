@@ -12,7 +12,7 @@ import {
   Settings,
   Users,
   Wrench,
-  Laptop
+  Laptop,
 } from "lucide-react";
 import {
   FaApple,
@@ -486,8 +486,8 @@ export default function Home() {
           </div>
 
           {/* Features Grid */}
-          <div className="z-10 grid grid-cols-1 justify-items-center gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <div className="z-10 rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary">
+          <div className="z-10 flex flex-wrap justify-center gap-6">
+            <div className="z-10 w-full rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div className="flex items-start gap-3">
                 <Laptop className="h-6 w-6 shrink-0" />
 
@@ -503,7 +503,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="z-10 rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary">
+            <div className="z-10 w-full rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div className="flex items-start gap-3">
                 <Settings className="h-6 w-6 shrink-0" />
 
@@ -519,7 +519,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="z-10 rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary">
+            <div className="z-10 w-full rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div className="flex items-start gap-3">
                 <Wrench className="h-6 w-6 shrink-0" />
 
@@ -535,7 +535,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="z-10 rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary">
+            <div className="z-10 w-full rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div className="flex items-start gap-3">
                 <Palette className="h-6 w-6 shrink-0" />
 
@@ -551,7 +551,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="z-10 rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary">
+            <div className="z-10 w-full rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div className="flex items-start gap-3">
                 <Globe2 className="h-6 w-6 shrink-0" />
 
@@ -567,7 +567,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="z-10 rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary">
+            <div className="z-10 w-full rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div className="flex items-start gap-3">
                 <Gamepad2 className="h-6 w-6 shrink-0" />
 
@@ -583,7 +583,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="z-10 rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary">
+            <div className="z-10 w-full rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div className="flex items-start gap-3">
                 <MessageCircle className="h-6 w-6 shrink-0" />
 
@@ -600,7 +600,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="z-10 rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary">
+            <div className="z-10 w-full rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div className="flex items-start gap-3">
                 <Users className="h-6 w-6 shrink-0" />
 
