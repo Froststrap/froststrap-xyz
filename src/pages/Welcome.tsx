@@ -6,7 +6,7 @@ const Welcome = () => {
   return (
     <div className="prose prose-invert max-w-none">
       <AnchorHeading id="welcome" level={1}>Welcome to Froststrap</AnchorHeading>
-      
+
       <p className="text-lg text-muted-foreground mb-8">
         Froststrap is a Bloxstrap/Fishstrap fork, made to have many new features.
       </p>
@@ -47,7 +47,7 @@ const Welcome = () => {
           Ready to switch? Check out our installation guide to get Froststrap.
         </p>
         <a
-          href="/docs/features/installation"
+          href="/docs/guide/installation"
           className="inline-flex items-center px-4 py-2 rounded-md bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors">
           View Installation Guide →
         </a>
