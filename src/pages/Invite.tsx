@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import DiscordMeta from "../components/DiscordMeta";
 
 const WORKER_BASE = "https://roblox-proxy.proxy-roblox.workers.dev";
 
@@ -106,9 +105,6 @@ const Invite: React.FC = () => {
 
   return (
     <HelmetProvider>
-      {/* Discord Meta Tags */}
-      {placeId && <DiscordMeta placeId={placeId} />}
-
       <main className="min-h-[60vh] flex items-center justify-center p-6">
         <div className="max-w-3xl w-full flex gap-6 items-start">
           {/* Thumbnail + Game Info */}
