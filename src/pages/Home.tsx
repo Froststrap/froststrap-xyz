@@ -54,7 +54,13 @@ interface GithubRepository {
   };
 }
 
-type Platform = "windows" | "macos" | "linux" | "unknown";
+type Platform =
+  | "windows"
+  | "macos"
+  | "linux"
+  | "android"
+  | "ios"
+  | "unknown";
 
 const githubApiBase = "https://api.github.com/repos/Froststrap/Froststrap";
 const cacheDuration = 5 * 60 * 1000;
@@ -122,17 +128,43 @@ const fetchGithub = async <T,>(url: string, cacheKey: string): Promise<T> => {
 };
 
 const getPlatform = (): Platform => {
-  const platform = navigator.platform.toLowerCase();
+  const override = import.meta.env.VITE_PLATFORM;
 
-  if (platform.includes("win")) {
+  if (
+    import.meta.env.DEV &&
+    (override === "windows" ||
+      override === "macos" ||
+      override === "linux" ||
+      override === "android" ||
+      override === "ios" ||
+      override === "unknown")
+  ) {
+    return override;
+  }
+
+  const userAgent = navigator.userAgent.toLowerCase();
+
+  if (userAgent.includes("android")) {
+    return "android";
+  }
+
+  if (
+    userAgent.includes("iphone") ||
+    userAgent.includes("ipad") ||
+    userAgent.includes("ipod")
+  ) {
+    return "ios";
+  }
+
+  if (userAgent.includes("windows")) {
     return "windows";
   }
 
-  if (platform.includes("mac")) {
+  if (userAgent.includes("mac os") || userAgent.includes("macintosh")) {
     return "macos";
   }
 
-  if (platform.includes("linux")) {
+  if (userAgent.includes("linux")) {
     return "linux";
   }
 
@@ -150,6 +182,10 @@ const getPlatformIcon = (platform: Platform) => {
     case "linux":
       return <FaLinux className="h-6 w-6" />;
 
+    case "android":
+    case "ios":
+      return <Laptop className="h-6 w-6" />;
+
     default:
       return <Download className="h-6 w-6" />;
   }
@@ -158,7 +194,7 @@ const getPlatformIcon = (platform: Platform) => {
 const getAssetExtension = (platform: Platform): string | null => {
   switch (platform) {
     case "windows":
-      return ".exe";
+      return ".msi";
 
     case "macos":
       return ".pkg";
@@ -386,23 +422,34 @@ export default function Home() {
               </p>
 
               <div className="z-10 flex flex-wrap justify-center gap-4">
-                <Button asChild size="lg" className="flex items-center gap-2">
-                  <a
-                    href={downloadUrl ?? "#"}
-                    aria-disabled={!downloadUrl}
-                    onClick={(event) => {
-                      if (!downloadUrl) {
-                        event.preventDefault();
-                      }
-                    }}
+                {platform === "android" || platform === "ios" ? (
+                  <Button
+                    size="lg"
+                    disabled
+                    className="flex items-center gap-2"
                   >
                     {getPlatformIcon(platform)}
+                    <span>Desktop only</span>
+                  </Button>
+                ) : (
+                  <Button asChild size="lg" className="flex items-center gap-2">
+                    <a
+                      href={downloadUrl ?? "#"}
+                      aria-disabled={!downloadUrl}
+                      onClick={(event) => {
+                        if (!downloadUrl) {
+                          event.preventDefault();
+                        }
+                      }}
+                    >
+                      {getPlatformIcon(platform)}
 
-                    {downloadUrl
-                      ? `Download Latest (${releaseData.downloadVersion})`
-                      : "Loading..."}
-                  </a>
-                </Button>
+                      {downloadUrl
+                        ? `Download Latest (${releaseData.downloadVersion})`
+                        : "Loading..."}
+                    </a>
+                  </Button>
+                )}
 
                 <Button asChild size="lg" variant="secondary" className="gap-2">
                   <a
